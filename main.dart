@@ -1,32 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:mp_2023/login_page.dart';
+import 'package:mini_project_2023/login_page.dart';
+
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Stack(
           children: [
             Container(
-              decoration: const BoxDecoration(
-                color: Color.fromARGB(209, 6, 8, 150),
-              ),
+              color: Colors.blue,
+              width: double.infinity,
+              height: double.infinity,
             ),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  width: 0.7 * MediaQuery.of(context).size.width,
-                  height: 0.7 * MediaQuery.of(context).size.height,
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(234, 243, 227, 10),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: const AcademiaRideLoginPage(),
-                ),
+            Container(
+              margin: const EdgeInsets.all(50.0),
+              decoration: BoxDecoration(
+                color: Colors.yellow,
+                borderRadius: BorderRadius.circular(20.0),
+              ),
+              child: Center(
+                child: LoginPage(),
               ),
             ),
           ],
@@ -34,8 +34,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
-
-void main() {
-  runApp(const MyApp());
 }
