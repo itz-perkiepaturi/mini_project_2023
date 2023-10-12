@@ -9,15 +9,16 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home Page"),
       ),
-      body: Center(
-        child: Stack(
-          children: [
-            Container(
-              color: Colors.blue,
-              width: double.infinity,
-              height: double.infinity,
-            ),
-            Container(
+      body: Stack(
+        children: [
+          Container(
+            color: Colors.blue,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+          Center(
+            child: Container(
+              width: 900,
               margin: const EdgeInsets.all(50.0),
               decoration: BoxDecoration(
                 color: Colors.yellow,
@@ -37,25 +38,34 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 20.0),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                            builder: (context) => PassengerPage()),
-                      );
-                    },
-                    child: const Text("Passenger"),
+                  SizedBox(
+                    height: 100, //height of button
+                    width: 300, //width of button
+                    child: ElevatedButton(
+                      // style: ButtonStyle(minimumSize: Size(200,100)),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => PassengerPage()),
+                        );
+                      },
+                      child: const Text("Passenger"),
+                    ),
                   ),
                   const SizedBox(height: 10.0),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("Driver"),
+                  SizedBox(
+                    height: 100, //height of button
+                    width: 300, //width of button
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text("Driver"),
+                    ),
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
